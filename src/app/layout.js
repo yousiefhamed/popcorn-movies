@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,8 @@ export const metadata = {
   learningHighlights: ["Proficiency in Next.js fundamentals", "Understanding client-side routing", "Implementing responsive design"],
   futureImprovements: ["Implement user authentication for personalized recommendations", "Add feature for saving favorite movies", "Enhance search functionality"],
   deployment: {
-    platform: "Hosting Platform",
-    url: "Link to deployed application"
-  },
-  testing: {
-    framework: "Testing Framework",
-    coverage: "Test coverage percentage"
+    platform: "Vercel",
+    url: "https://popcorn-hamed.vercel.app"
   },
   accessibility: "Compliance with web accessibility standards",
   performanceOptimization: "Optimized performance through code splitting and lazy loading"
@@ -30,7 +27,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}</body>
     </html>
   );
 }
